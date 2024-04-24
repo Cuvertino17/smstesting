@@ -20,7 +20,6 @@ import androidx.core.content.ContextCompat;
 
 import com.google.firebase.FirebaseApp;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         FirebaseApp.initializeApp(this);
+
 //        listView = findViewById(R.id.listView);
 //        errorTextView = findViewById(R.id.errorTextView);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>());
-        listView.setAdapter(adapter);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>());
+//        listView.setAdapter(adapter);
         checkAndRequestPermissions();
+        checkBatteryOptimizations();
 
     }
 
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS},
                     READ_SMS_PERMISSION_CODE);
         } else {
-            checkBatteryOptimizations();
+
 
             startSMSService();
         }

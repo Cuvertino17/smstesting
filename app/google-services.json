@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "706518619665",
-    "project_id": "smstesting-f1188",
-    "storage_bucket": "smstesting-f1188.appspot.com"
+    "project_number": "843265721577",
+    "project_id": "re-smstesting",
+    "storage_bucket": "re-smstesting.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:706518619665:android:68b193fdbe829d7f8243b0",
+        "mobilesdk_app_id": "1:843265721577:android:270f8033a45fb7e8471c78",
         "android_client_info": {
           "package_name": "com.abhi.smstesting"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDzJpcO2vVyK6m967p06Wt5UMkA8QhPthM"
+          "current_key": "AIzaSyBVuf507hhdAeD8buDYMSLUrwIr8UODXOo"
         }
       ],
       "services": {
