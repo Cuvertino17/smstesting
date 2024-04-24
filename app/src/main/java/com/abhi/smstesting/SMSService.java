@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.provider.Settings;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
@@ -49,7 +49,25 @@ public class SMSService extends Service {
     }
 
     private String fetchDeviceId() {
-        return Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        String manufac = Build.MANUFACTURER;
+        String model = Build.MODEL;
+        if(model.startsWith(manufac)){
+            return capitalize(model);
+        }else{
+            return capitalize(manufac) + " " + model;
+        }
+//        return Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+    private String capitalize(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        char first = s.charAt(0);
+        if (Character.isLowerCase(first)) {
+            return Character.toUpperCase(first) + s.substring(1);
+        } else {
+            return s;
+        }
     }
 
     @Override
